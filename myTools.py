@@ -2,6 +2,7 @@ from optparse import OptionParser
 from stringtool.characterencode import run
 '''
 author:liangjfc@yonyou.com
+date:2015-12-01
 '''
 
 if __name__=="__main__":
