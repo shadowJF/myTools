@@ -1,5 +1,8 @@
 from optparse import OptionParser
 from stringtool.characterencode import run
+'''
+author:liangjfc@yonyou.com
+'''
 
 if __name__=="__main__":
     parser = OptionParser() 
