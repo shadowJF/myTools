@@ -1,6 +1,6 @@
 from stringtool.characterencode.character import character
 
-def run(var,func,encoding):
+def character_run(var,func,encoding):
     ch = character(var,func,encoding)
     
     if func == "encode":
