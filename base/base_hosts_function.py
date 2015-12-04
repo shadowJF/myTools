@@ -25,23 +25,23 @@ class base_hosts_function(function_base):
                         if line != "":
                             print(line)
     
-    def is_os(self,str):
+    def is_os(self,string):
         pattern = re.compile("windows|linux",re.IGNORECASE)
-        match = pattern.match(str)
+        match = pattern.match(string)
         if match:
             return True
         else:
             return False
       
-    def is_ip(self,str):
+    def is_ip(self,string):
         pattern = re.compile("^(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[0-9]{1,2})(\.(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[0-9]{1,2})){3}$")  
-        match = pattern.match(str)
+        match = pattern.match(string)
         if match:
             return True
         else:
             return False  
 
-    def match_ip_hostname(self,str,ip,hostname):
+    def match_ip_hostname(self,string,ip,hostname):
         if ip and hostname:
             p_str = ip + "\s*" + hostname
         elif ip:
@@ -50,7 +50,7 @@ class base_hosts_function(function_base):
             p_str = ".*\s*" + hostname
         
         pattern = re.compile("^" + p_str + "$")
-        match = pattern.match(str)
+        match = pattern.match(string)
         if match:
             return True
         else:

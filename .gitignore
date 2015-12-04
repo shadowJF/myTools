@@ -1,0 +1,8 @@
+/target/
+*.classpath
+.classpath
+.project
+*.project
+*.pyc
+.settings/
+/.settings/

@@ -49,6 +49,8 @@ class function(base_hosts_function):
             os.remove(path)
             os.rename(path+".tmp",path)
             
+            print("host deleted succeed.\n")
+            print("now the hosts file is:")
             self.read_hosts_content(path)
         except Exception as err:
             print(err)
