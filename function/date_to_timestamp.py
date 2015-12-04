@@ -11,6 +11,7 @@ class function(function_base):
     @abc.abstractmethod
     def func_run(self,params):
         try:
+            self.check_params(params)
             date = params[0]
             ts = None
             if date == "now":

@@ -11,7 +11,7 @@ class function(function_base):
     def func_run(self,params):
         try:
             bytesstr = params[0]
-            if len(params) == 2:
+            if len(params) >= 2:
                 encoding = params[1]
             else:
                 encoding = "utf-8"
@@ -21,6 +21,5 @@ class function(function_base):
             print(str_data)
         except Exception as err:
             print(err)
-            print("may be encoding error, try use -c to specify an encoding")
             
         
