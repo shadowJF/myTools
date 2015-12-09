@@ -36,23 +36,21 @@ if __name__=="__main__":
     =+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
     Function: read_hosts
     ----------------------------------------------------
-    Describe: read contents of file "hosts". You can specify the os,default in windows.
+    Describe: read contents of file "hosts". 
     ----------------------------------------------------            
-    use like: -f read_hosts or -f read_hosts linux 
+    use like: -f read_hosts 
     =+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
     Function: add_hosts
     ----------------------------------------------------
-    Describe: add host (ip hostname) into file hosts. You can specify the os also
+    Describe: add host (ip hostname) into file hosts.
     ----------------------------------------------------
-    use like: -f add_hosts ip hostname or -f add_hosts windows ip hostname
+    use like: -f add_hosts ip hostname 
     =+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
     Function: delete_hosts
     ----------------------------------------------------
-    Describe: delete host from hosts file. You can specify ip or hostname to delete hosts related to it 
-    or delete the specific host by specify ip and hostname. You can specify the os also, if specified, os
-    must be the first argument
+    Describe: delete host from hosts file. You can specify ip or hostname or both to delete hosts related to it 
     ----------------------------------------------------
-    use like: -f delete_hosts 10.2.3.5 or -f delete_hosts 10.3.4.5 jingfan.com or -f delete_hosts linux 10.1.1.1 '''
+    use like: -f delete_hosts 10.2.3.5 or -f delete_hosts 10.3.4.5 jingfan.com or -f delete_hosts jingfan.com'''
     
     
     

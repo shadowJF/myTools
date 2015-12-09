@@ -1,5 +1,5 @@
 from base.base_function import function_base
-import re
+import re,platform
 
 
 class base_hosts_function(function_base):
@@ -24,6 +24,14 @@ class base_hosts_function(function_base):
                         line = line.strip()
                         if line != "":
                             print(line)
+    
+    def get_os(self):
+        if "Windows" in platform.system():
+            return "windows"
+        elif "Linux" in platform.system():
+            return "linux"
+        else:
+            raise ValueError("the os is not supported please email ljingfan159@163.com to report.")
     
     def is_os(self,string):
         pattern = re.compile("windows|linux",re.IGNORECASE)

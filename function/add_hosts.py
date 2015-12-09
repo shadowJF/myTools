@@ -7,20 +7,15 @@ class function(base_hosts_function):
         pass
     
     def check_params(self, params):
-        if len(params) < 2:
+        if len(params) != 2:
             raise ValueError("ip and hostname should be specified.")
     
     @abc.abstractmethod
     def func_run(self,params):
         try:
-            os = "windows"
-            if params is not None and len(params) == 3 :
-                os = params[0]
-                ip = params[1]
-                hostname = params[2]
-            else:
-                ip = params[0]
-                hostname = params[1]
+            os = self.get_os()
+            ip = params[0]
+            hostname = params[1]
             
             path = self.get_host_path(os)
 

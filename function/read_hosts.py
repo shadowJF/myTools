@@ -12,9 +12,7 @@ class function(base_hosts_function):
     @abc.abstractmethod
     def func_run(self,params):
         try:
-            os = "windows"
-            if params is not None and len(params) >=1 :
-                os = params[0]
+            os = self.get_os()
             
             path = self.get_host_path(os)
 

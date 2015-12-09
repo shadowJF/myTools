@@ -7,29 +7,18 @@ class function(base_hosts_function):
         pass
     
     def check_params(self, params):
-        if len(params) < 1:
-            raise ValueError("at least one ip or one hostname should be specified.")
+        if len(params) < 1 or len(params) > 2:
+            raise ValueError("at least one ip or one hostname should be specified and no more arguments.")
     
     @abc.abstractmethod
     def func_run(self,params):
         try:
-            opsys = "windows"
+            opsys = self.get_os()
             ip = None
             hostname = None
-            if len(params) == 3:
-                opsys = params[0]
-                ip = params[1]
-                hostname = params[2]
-            elif len(params) == 2:
-                if self.is_os(params[0]):
-                    opsys = params[0]
-                    if self.is_ip(params[1]):
-                        ip = params[1]
-                    else:
-                        hostname = params[1]
-                else:
-                    ip = params[0]
-                    hostname = params[1]
+            if len(params) == 2:
+                ip = params[0]
+                hostname = params[1]
             elif len(params) == 1:
                 if self.is_ip(params[0]):
                     ip = params[0]
